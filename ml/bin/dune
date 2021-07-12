@@ -1,4 +1,4 @@
 (executables
- (names exo_01 exo_02 exo_03 exo_04 exo_05 exo_06 exo_07)
+ (names exo_01 exo_02 exo_03 exo_04 exo_05 exo_06 exo_07 exo_08)
  (libraries common)
  )
