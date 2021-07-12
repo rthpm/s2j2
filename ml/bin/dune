@@ -1,0 +1,4 @@
+(executables
+ (names exo_01 exo_02 exo_03 exo_04)
+ (libraries common)
+ )
