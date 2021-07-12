@@ -24,7 +24,7 @@ struct
       else CorrectAge age;;
 
   let check_birthdate birthdate =
-    if birthdate < 0
+    if birthdate < 0 || birthdate > current_year
       then WrongBirthDate 
       else CorrectBirthDate birthdate;;
 
