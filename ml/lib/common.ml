@@ -12,6 +12,10 @@ struct
     WrongBirthDate
     | CorrectBirthDate of int;;
 
+  type checked_times =
+    WrongTimes
+    | CorrectTimes of int;;
+
   let current_year = (Unix.gmtime(Unix.time())).tm_year + 1900;;
 
   let check_age age =
@@ -23,6 +27,11 @@ struct
     if birthdate < 0
       then WrongBirthDate 
       else CorrectBirthDate birthdate;;
+
+  let check_times times =
+    if times <= 0
+      then WrongTimes
+      else CorrectTimes times;;
 
   let read_age () =
     Printf.printf "Quel est ton age ?\n";
@@ -41,4 +50,14 @@ struct
     match ck_birthdate with
       | WrongBirthDate -> raise (InvalidParams "Wrong birth date entered !")
       | CorrectBirthDate date -> date;;
+
+  let read_times () =
+    Printf.printf("Combien de fois ?\n");
+    let times = read_int () in
+
+    let ck_times = check_times times in
+
+    match ck_times with
+      | WrongTimes -> raise (InvalidParams "Wrong number of times entered !")
+      | CorrectTimes numb -> numb;;
 end;;
